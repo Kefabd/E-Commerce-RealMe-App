@@ -39,7 +39,7 @@ export default function Categories() {
             <Header />
             {categories.map((category) => (
               <Link href={`/products/${category}`}>
-                <div key={category._id}>{category}</div>
+                <div key={category}>{category}</div>
               </Link>
               
             )
