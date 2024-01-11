@@ -20,7 +20,7 @@ const Header = () => {
     async () => {
     if (searchTerm.length) {
       // add your Realm App Id to the .env.local file
-      const REALM_APP_ID = process.env.NEXT_PUBLIC_REALM_APP_ID;
+      const REALM_APP_ID = "e-commerce-jmhmz";
       const app = new Realm.App({ id: REALM_APP_ID });
       const credentials = Realm.Credentials.anonymous();
       try {
@@ -59,8 +59,8 @@ const Header = () => {
         <div className="container mx-auto px-6 py-3">
           <div className="flex items-center justify-between">
             <Link href="/">
-              <div className="w-full text-green-500 text-2xl font-semibold cursor-pointer">
-                MongoStore
+              <div className="w-full text-beige text-2xl font-semibold cursor-pointer">
+                MaroCosmetique
               </div>
             </Link>
             <div className="flex items-center justify-end w-full">
@@ -123,7 +123,7 @@ const Header = () => {
             </span>
             <form onSubmit={handleSubmit}>
               <input
-                className="w-full border rounded-md pl-10 pr-4 py-2 focus:border-green-500 focus:outline-none focus:shadow-outline"
+                className="w-full border rounded-md pl-10 pr-4 py-2 focus:border-beige focus:outline-none focus:shadow-outline"
                 type="text"
                 placeholder="Search"
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -131,12 +131,12 @@ const Header = () => {
               />
             </form>
             {autoComplete.length > 0 && (
-              <ul className="absolute inset-x-0 top-full bg-green-200 border border-green-500 rounded-md z-20">
+              <ul className="absolute inset-x-0 top-full bg-beige border border-beige rounded-md z-20">
                 {autoComplete.map((item) => {
                   return (
                     <li
                       key={item._id}
-                      className="px-4 py-2 hover:bg-green-300 cursor-pointer"
+                      className="px-4 py-2 hover:bg-beige cursor-pointer"
                       onClick={() => handleSelect(item._id)}
                     >
                       {item.name}

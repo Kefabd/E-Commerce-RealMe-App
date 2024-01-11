@@ -34,7 +34,7 @@ const ProductDetail = ({ product }) => {
           </div>
         </div>
         <div className="flex items-center mt-6">
-          <button className="px-8 py-2 bg-green-600 text-white text-sm font-medium rounded hover:bg-green-500 focus:outline-none focus:bg-green-500">
+          <button className="px-8 py-2 bg-beige text-white text-sm font-medium rounded hover:bg-beige focus:outline-none focus:bg-beige">
             Add To Cart
           </button>
         </div>
