@@ -17,25 +17,26 @@ const Header = () => {
   const [autoComplete, setAutoComplete] = useState([]);
 
   useEffect(() => {
-    async () => {
-    if (searchTerm.length) {
-      // add your Realm App Id to the .env.local file
-      const REALM_APP_ID = "e-commerce-jmhmz";
-      const app = new Realm.App({ id: REALM_APP_ID });
-      const credentials = Realm.Credentials.anonymous();
-      try {
-        const user = await app.logIn(credentials);
-        const searchAutoComplete = await user.functions.searchAutoComplete(
-          searchTerm
-        );
-        setAutoComplete(() => searchAutoComplete);
-      } catch (error) {
-        console.error(error);
+    const fetchData = async () => {
+      if (searchTerm.length) {
+        // add your Realm App Id to the .env.local file
+        const REALM_APP_ID = "e-commerce-jmhmz";
+        const app = new Realm.App({ id: REALM_APP_ID });
+        const credentials = Realm.Credentials.anonymous();
+        try {
+          const user = await app.logIn(credentials);
+          const searchAutoComplete = await user.functions.searchAutoComplete(searchTerm);
+          console.log(searchAutoComplete);
+          setAutoComplete(() => searchAutoComplete);
+        } catch (error) {
+          console.error(error);
+        }
+      } else {
+        setAutoComplete([]);
       }
-    } else {
-      setAutoComplete([]);
     }
-  }}, [searchTerm]);
+    fetchData();
+  }, [searchTerm]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

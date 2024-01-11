@@ -27,7 +27,7 @@ export default function Categories() {
       }
     };
     fetchData();
-  }, []);
+  });
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
@@ -39,7 +39,7 @@ export default function Categories() {
             <Header />
             <div className="flex flex-wrap gap-4 p-4 items-center justify-center">
       {categories.map((category) => (
-        <Link href={`/products/${category}`} key={category}>
+        <Link href={`/products/category/${category}`} key={category}>
           <div className="bg-beige w-full  p-6 cursor-pointer hover:bg-white transition duration-300 border border-gray-300 rounded-md shadow-md min-w-0">
             {/* Ajoutez du contenu supplémentaire ici si nécessaire */}
             {category}
