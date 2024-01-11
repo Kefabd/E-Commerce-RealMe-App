@@ -15,7 +15,7 @@ export default function Categories() {
   useEffect(() => {
     const fetchData = async () => {
       // add your Realm App Id to the .env.local file
-      const REALM_APP_ID = process.env.NEXT_PUBLIC_REALM_APP_ID;
+      const REALM_APP_ID = "e-commerce-jmhmz";
       const app = new Realm.App({ id: REALM_APP_ID });
       const credentials = Realm.Credentials.anonymous();
       try {
@@ -37,16 +37,16 @@ export default function Categories() {
           </Head>
           <div className="bg-white w-full min-h-screen">
             <Header />
-            {categories.map((category) => (
-              <Link href={`/products/category/${category}`}>
-                <div key={category}>{category}</div>
-              </Link>
-              
-            )
-              
-             
-                
-            )}
+            <div className="flex flex-wrap gap-4 p-4 items-center justify-center">
+      {categories.map((category) => (
+        <Link href={`/products/${category}`} key={category}>
+          <div className="bg-beige w-full  p-6 cursor-pointer hover:bg-white transition duration-300 border border-gray-300 rounded-md shadow-md min-w-0">
+            {/* Ajoutez du contenu supplémentaire ici si nécessaire */}
+            {category}
+          </div>
+        </Link>
+      ))}
+    </div>
            
             <Footer />
           </div>
