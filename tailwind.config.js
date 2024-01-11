@@ -9,4 +9,12 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  plugins: [],
+  theme: {
+    extend: {
+      colors: {
+        beige: '#DEB887',
+      },
+    },
+  },
 }

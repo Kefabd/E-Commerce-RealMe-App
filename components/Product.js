@@ -15,7 +15,7 @@ const Product = ({ product }) => {
             objectFit="cover"
             className="absolute z-0"
           />
-          <button className="absolute z-10 p-2 rounded-full bg-green-600 text-white mx-5 -mb-4 hover:bg-green-500 focus:outline-none focus:bg-green-500">
+          <button className="absolute z-10 p-2 rounded-full bg-beige text-white mx-5 -mb-4 hover:bg-beige focus:outline-none focus:bg-beige">
             <ShoppingCartIcon className="w-5 h-5" />
           </button>
         </div>
