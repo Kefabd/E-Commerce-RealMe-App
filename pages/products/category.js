@@ -38,7 +38,7 @@ export default function Categories() {
           <div className="bg-white w-full min-h-screen">
             <Header />
             {categories.map((category) => (
-              <Link href={`/products/${category}`}>
+              <Link href={`/products/category/${category}`}>
                 <div key={category}>{category}</div>
               </Link>
               

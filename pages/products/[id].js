@@ -31,7 +31,7 @@ const ProductDetails = () => {
   };
   fetchData();
 }, [])
-
+console.log(query);
   return (
     <>
       {product && (
