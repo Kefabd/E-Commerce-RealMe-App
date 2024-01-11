@@ -11,6 +11,7 @@ import Products from "../../../components/Products";
 export default function Home() {
   const [products, setProducts] = useState([]);
   const { query } = useRouter();
+    console.log(query.category)
   useEffect(() => {
     const fetchData = async () => {
         if (query.category) {
@@ -28,7 +29,7 @@ export default function Home() {
         }
     };
     fetchData();
-  });
+  }, []);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
