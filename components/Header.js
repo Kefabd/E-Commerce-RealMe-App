@@ -36,6 +36,7 @@ const Header = () => {
       }
     }
     fetchData();
+    console.log(searchTerm);
   }, [searchTerm]);
 
   const handleSubmit = (e) => {
@@ -127,11 +128,14 @@ const Header = () => {
                 className="w-full border rounded-md pl-10 pr-4 py-2 focus:border-beige focus:outline-none focus:shadow-outline"
                 type="text"
                 placeholder="Search"
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                  console.log(searchTerm);
+                }}
                 value={searchTerm}
               />
             </form>
-            {autoComplete.length > 0 && (
+            {autoComplete.length > 0 && searchTerm != '' && (
               <ul className="absolute inset-x-0 top-full bg-beige border border-beige rounded-md z-20">
                 {autoComplete.map((item) => {
                   return (
@@ -146,6 +150,9 @@ const Header = () => {
                 })}
               </ul>
             )}
+            {autoComplete.length === 0 && searchTerm != '' && <div className="absolute inset-x-0 top-full bg-beige border border-beige rounded-md z-20">
+                Aucun resultat
+                </div>}
           </div>
         </div>
       </header>

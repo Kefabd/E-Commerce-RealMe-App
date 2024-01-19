@@ -42,6 +42,7 @@ export default function Home() {
         <Header />
         <Container>
           <h1>{query.category}</h1>
+          <h2>{products.length} Produits</h2>
           <Products products={products} />
           <Pagination />
         </Container>

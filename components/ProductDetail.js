@@ -3,6 +3,20 @@ import Image from "next/image";
 import { PlusCircleIcon, MinusCircleIcon } from "@heroicons/react/outline";
 
 const ProductDetail = ({ product }) => {
+
+  const AddToCart = () => {
+    // Retrieve existing cart items from localStorage
+    const existingCart = sessionStorage.getItem('cart');
+  
+    // Parse existing cart items (or initialize an empty array)
+    const cart = existingCart ? JSON.parse(existingCart) : [];
+  
+    // Add the current product to the cart
+    cart.push(product);
+  
+    // Store the updated cart in localStorage
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+  };
   
   return (
     <div className="md:flex md:items-center">
@@ -34,7 +48,7 @@ const ProductDetail = ({ product }) => {
           </div>
         </div>
         <div className="flex items-center mt-6">
-          <button className="px-8 py-2 bg-beige text-white text-sm font-medium rounded hover:bg-beige focus:outline-none focus:bg-beige">
+          <button className="px-8 py-2 bg-beige text-white text-sm font-medium rounded hover:bg-beige focus:outline-none focus:bg-beige" onClick={AddToCart}>
             Add To Cart
           </button>
         </div>

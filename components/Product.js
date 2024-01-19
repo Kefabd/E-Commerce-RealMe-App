@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ShoppingCartIcon } from "@heroicons/react/outline";
 
 const Product = ({ product }) => {
+  
   return (
     <Link href={`/products/${product._id}`}>
       <div className="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden cursor-pointer hover:shadow-2xl transition">
